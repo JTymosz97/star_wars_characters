@@ -1,0 +1,26 @@
+body {
+    background-image: url("/static/images/background.png");
+    background-size: cover;
+}
+
+.nav_icon {
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.home_text {
+    text-align: center;
+    display: inline-block;
+    margin: 50px 400px 200px 400px;
+    padding: 20px 20px 20px 20px;
+    background-color: black;
+    color: yellow;
+    border-radius: 25px;
+}
+
+/* #index_head {
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+} */
