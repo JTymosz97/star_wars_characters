@@ -27,7 +27,7 @@ To run locally on your machine first it is recommended you create Python virtual
 	cd star_wars_project
 	python manage.py runserver
 	
-After running the app got to http://127.0.0.1:8000/ in any web browser
+### After running the app got to http://127.0.0.1:8000/ in any web browser
 
 # Possible future updates
 - **Adding tests** - tests are required for any application, as they are the base for future growth and stability
