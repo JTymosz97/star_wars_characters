@@ -1,0 +1,78 @@
+{% extends "characters_explorer/base.html" %}
+
+{% block body_block%}
+
+<div class="container">
+    <div class="home_collections">
+        <p>{{file_name}}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for button_name, checked in value_count_buttons.items %}
+            <input type="checkbox" class="btn-check" id={{button_name}} name={{button_name}} autocomplete="off" {{checked}}>
+            <label class="btn btn-outline-primary" for={{button_name}}>{{button_name}}</label>
+            {% endfor %}
+            <!-- <input type="checkbox" class="btn-check" id="name" name="name" autocomplete="off">
+            <label class="btn btn-outline-primary" for="name">Name</label>
+
+            <input type="checkbox" class="btn-check" id="height" name="height" autocomplete="off">
+            <label class="btn btn-outline-primary" for="height">Height</label>
+
+            <input type="checkbox" class="btn-check" id="mass" name="mass" autocomplete="off">
+            <label class="btn btn-outline-primary" for="mass">Mass</label>
+
+            <input type="checkbox" class="btn-check" id="hair_color" name="hair_color" autocomplete="off">
+            <label class="btn btn-outline-primary" for="hair_color">Hair_color</label>
+
+            <input type="checkbox" class="btn-check" id="skin_color" name="skin_color" autocomplete="off">
+            <label class="btn btn-outline-primary" for="skin_color">Skin_color</label>
+
+            <input type="checkbox" class="btn-check" id="eye_color" name="eye_color" autocomplete="off">
+            <label class="btn btn-outline-primary" for="eye_color">Eye_color</label>
+
+            <input type="checkbox" class="btn-check" id="birth_year" name="birth_year" autocomplete="off">
+            <label class="btn btn-outline-primary" for="birth_year">Birth_year</label>
+
+            <input type="checkbox" class="btn-check" id="gender" name="gender" autocomplete="off">
+            <label class="btn btn-outline-primary" for="gender">Gender</label>
+
+            <input type="checkbox" class="btn-check" id="homeworld" name="homeworld" autocomplete="off">
+            <label class="btn btn-outline-primary" for="homeworld">Homeworld</label>
+
+            <input type="checkbox" class="btn-check" id="date" name="date" autocomplete="off">
+            <label class="btn btn-outline-primary" for="date">Date</label> -->
+
+            <button name="value_count" type="submit" class="btn btn-outline-success" style="margin-left: 10px;">Count
+                values</button>
+        </form>
+
+        <table class="table table-dark table-striped" style="margin-bottom: 10px; margin-top: 10px;">
+            <thead>
+                <tr>
+                    {% for header in headers %}
+                    <th scope="col">{{header}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            {% for row in collection_data %}
+            <tbody>
+                <tr>
+                    {% for data in row %}
+                    <td scope="row">{{data}}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+        {% if load_more%}
+        <form method="POST">
+            {% csrf_token %}
+            <button name="load_more" type="submit" class="btn btn-outline-success">Load more</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

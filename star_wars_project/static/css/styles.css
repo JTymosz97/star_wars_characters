@@ -1,6 +1,8 @@
 body {
     background-image: url("/static/images/background.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .nav_icon {
@@ -20,7 +22,10 @@ body {
     border-radius: 25px;
 }
 
-/* #index_head {
-    text-align: center;
-    margin: 20px 20px 20px 20px;
-} */
+.home_collections {
+    background-color: black;
+    color: yellow;
+    padding: 20px 20px 20px 20px;
+    margin-top: 50px;
+    border-radius: 25px;
+}
