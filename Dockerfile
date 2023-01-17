@@ -25,4 +25,4 @@ EXPOSE 8000
 
 # start server  
 WORKDIR $DockerHOME/star_wars_project
-CMD python manage.py runserver 0.0.0.0:8000
+CMD python3 manage.py runserver 0.0.0.0:8000
